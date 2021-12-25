@@ -1,5 +1,8 @@
 # Christian Wallpapers website
 This is the code for the Christian Wallpapers website, I am using this website as a way to practice my Javascript, HTML, CSS, and Python and then I have an actual use for it aswell.
+The link for the website is: http://christianwallpapers.pythonanywhere.com/
+
+[Admin link](https://www.pythonanywhere.com/user/ChristianWallpapers/webapps/#tab_id_christianwallpapers_pythonanywhere_com)
 
 ## Features to be implemented:
 - Download button on the images
