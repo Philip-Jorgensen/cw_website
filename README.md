@@ -6,6 +6,7 @@ The link for the website is: <a href="http://christianwallpapers.pythonanywhere.
 
 ## Features to be implemented:
 - Download button on the images
+- Make a better looking about page
 - Login page for admin to upload new wallpapers
 
 
