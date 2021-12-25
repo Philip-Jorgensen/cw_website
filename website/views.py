@@ -7,9 +7,9 @@ cwd_path = Path.cwd()
 parent_path = cwd_path.parent.absolute()
 
 if str(parent_path)[-6:] == 'GitHub':
-    working_path = f"website/"
+    working_path = "website/"
 else:
-    working_path = f"cw_website/website/"
+    working_path = "cw_website/website/"
 
 views = Blueprint("views", __name__)
 
