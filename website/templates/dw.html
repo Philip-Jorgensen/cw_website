@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title%}Desktop Wallpapers{% endblock %}
+{% block content %}
+<h1 align='center' class="p-5" style="font-family: 'Montserrat', sans-serif;">Desktop Wallpapers</h1>
+
+<div class="container images-container" align='center'>
+    {% for row in range(row_count) %}
+        <div class="row container-fluid p-3">
+            {% for col in range(col_count) %}
+            <div class="col container-fluid">
+                <a href="{{ dw_imgs_fullres[row + row_count*col] }}" data-lightbox="mygallery" data-title="{{ dw_titles[row + row_count*col] }}">
+                    <img 
+                        src="{{ dw_imgs_lowres[row + row_count*col] }}" 
+                        alt="{{ dw_imgs_lowres[row + row_count*col] }}" 
+                        class="img-fluid shadow lg lazyload wall_img">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+</div>
+
+{% endblock %}

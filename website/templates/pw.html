@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title%}Phone Wallpapers{% endblock %}
+{% block content %}
+<h1 align='center' class="p-5" style="font-family: 'Montserrat', sans-serif;">Phone Wallpapers</h1>
+
+<div class="container images-container" align='center'>
+    {% for row in range(row_count) %}
+        <div class="row container-fluid p-3">
+            {% for col in range(col_count) %}
+            <div class="col container-fluid">
+                <a href="{{ pw_imgs_fullres[row + row_count*col] }}" data-lightbox="mygallery" data-title="{{ pw_titles[row + row_count*col] }}">
+                    <img 
+                        src="{{ pw_imgs[row + row_count*col] }}" 
+                        alt="{{ pw_imgs[row + row_count*col] }}" 
+                        class="img-thumbnail shadow lg wall_img">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}
