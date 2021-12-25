@@ -1,7 +1,6 @@
 from website import create_app
 
-# This is a test for whether it will update on the website
+app = create_app()
 
 if __name__ == '__main__':
-    app = create_app()
-    app.run(debug = True)
+    app.run(debug=True)

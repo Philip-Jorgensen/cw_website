@@ -1,6 +1,15 @@
 from flask import Blueprint, render_template, redirect, url_for
 import os
 import math
+from pathlib import Path
+
+cwd_path = Path.cwd()
+parent_path = cwd_path.parent.absolute()
+
+if str(parent_path)[-6:] == 'GitHub':
+    working_path = f"website/"
+else:
+    working_path = f"cw_website/website/"
 
 views = Blueprint("views", __name__)
 
@@ -16,7 +25,7 @@ def dw_page():
     dw_titles = []
     path = 'static/assets/dw'
     path_lowres = path + '_lowres'
-    for filename in os.listdir(f"website/{path}"):
+    for filename in os.listdir(f"{working_path}{path}"):
         dw_titles.append(filename[3:-4])
         if filename.endswith(".jpg"):
             dw_imgs_lowres.append(os.path.join(path_lowres, filename))
@@ -45,7 +54,7 @@ def pw_page():
     col_count = 3
     path = 'static/assets/pw'
     path_lowres = path + '_lowres'
-    for filename in os.listdir(f"website/{path}"):
+    for filename in os.listdir(f"{working_path}{path}"):
         pw_titles.append(filename[3:-4])
         if filename.endswith(".jpg"):
             pw_imgs_lowres.append(os.path.join(path_lowres, filename))
