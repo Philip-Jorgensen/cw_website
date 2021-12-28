@@ -8,6 +8,8 @@ The link for the website is: <a href="http://christianwallpapers.pythonanywhere.
 - Download button on the images
 - Make a better looking about page
 - Login page for admin to upload new wallpapers
+- Add a share button for the wallpapers to facebook and other social media platforms
+-   <a href="https://developers.facebook.com/docs/plugins/share-button/">https://developers.facebook.com/docs/plugins/share-button/</a>
 
 
 *Chrstian wallpapers is made and managed by Philip J*
