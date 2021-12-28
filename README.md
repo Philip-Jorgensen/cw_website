@@ -11,6 +11,7 @@ The link for the website is: <a href="http://christianwallpapers.pythonanywhere.
 - Add a share button for the wallpapers to facebook and other social media platforms
   -   <a href="https://developers.facebook.com/docs/plugins/share-button/">https://developers.facebook.com/docs/plugins/share-button/</a>
   -   https://www.youtube.com/watch?v=MBaw_6cPmAw
+-   Setup API control for both Facebook and Instragram so it automatically uploads to those places when I upload to the website.
 
 
 *Chrstian wallpapers is made and managed by Philip J*
