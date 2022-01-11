@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title%}Home{% endblock %}
+{% block content %}
+<h1 align='center' style="font-family: 'Pushster', cursive;" class="p-3"> Login </h1>
+
+<style>
+    .form-group {
+        width: 50%;
+        margin: auto;
+    }
+    .btn-login:hover{
+        opacity: 0.7
+    }
+    .btn-login {
+        width: 20%;
+        margin: auto;
+        /*font-family: 'Montserrat', sans-serif; */
+    }
+</style>
+
+<form method="POST">
+    <div class="form-group mb-3">
+        <input 
+            type="text"
+            id="email"
+            name="email"
+            class="form-control mb-3"
+            placeholder="Enter Email">
+        <input 
+            type="password"
+            id="password"
+            name="password"
+            class="form-control mb-3"
+            placeholder="Enter Password">
+        <button class="btn btn-light btn-login" type="submit">Login</button>
+    </div>
+</form>
+{% endblock %}

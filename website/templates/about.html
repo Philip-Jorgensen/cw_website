@@ -1,7 +1,39 @@
 {% extends "base.html" %} {% block title%}About{% endblock %}
+
+{% set email = 'christianwallpapersen@gmail.com' %}
+
 {% block content %}
-<h1 align='center'> About </h1>
-<p styles="font-family: 'Open Sans Condensed', sans-serif;"> Hey! I'm an amature photographer and a student. <br>I'm a personal Christian, and I want to share the gospel through encouraging wallpapers!
-    Feel free to share the wallpapers with friends and family! It means a lot to me!
-​</p>
+<div class='container about_main'>
+    <!-- <div class="row"> -->
+        <div class='col'>
+            <h1 align='center' style="font-family: 'Pushster', cursive;"> About </h1>
+            <p style="font-family: 'Montserrat', sans-serif;"> Hey! I'm an amature photographer and a student. <br>I'm a personal Christian, and I want to share the gospel through encouraging wallpapers!
+                Feel free to share the wallpapers with friends and family! It means a lot to me!
+            ​</p>
+        </div>
+        <!-- <div class="col">
+            <h1 align='center' style="font-family: 'Pushster', cursive;">Contact</h1>
+            <div style="font-family: 'Montserrat',">
+                <b>Email:</b> {{ email }}
+            </div>
+        </div>
+    </div> -->
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <a href="mailto: {{ email }}" class="link-secondary" target="_blank" style="text-decoration: none;">
+        {{ email }} &nbsp; &nbsp; <i class="far fa-envelope"></i> 
+    </a>&nbsp; &nbsp; | &nbsp; &nbsp; 
+    <a href="https://www.facebook.com/ChristianWallpapersEN" class="link-secondary" target="_blank" style="text-decoration: none;">
+        <i class="fab fa-facebook-f"></i>
+    </a> &nbsp;
+    <a href="https://www.instagram.com/christianwallpapers0/" class="link-secondary" target="_blank" style="text-decoration: none;">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    
+    &nbsp; &nbsp; | &nbsp; &nbsp;
+    <a href="/admin" class="link-secondary" style="text-decoration: none;">Admin</a>
 {% endblock %}

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)https://getbootstrap.com/docs/5.1/examples/cover/# -->
 <html lang="en" class="h-100"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +7,7 @@
     <script src="https://kit.fontawesome.com/c7d5532f08.js" crossorigin="anonymous"></script>
     <title>CW - {% block title %}{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico">
+    <link rel="stylesheet" href="static/popup.css">
 
     <link 
       rel="preconnect" 
@@ -56,17 +56,15 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js">lazyload();</script>
+    <script src="static/index.js"></script>
 
     
     <!-- Custom styles for this template -->
     <link href="static/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/lightbox.min.css" type="text/css">
-    <script src="static/lightbox-plus-jquery.min.js"></script>
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
-    
+  <body class="d-flex h-100 text-center text-white">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
+  <header class="mb-auto" align='center'>
     <div>
       <h3 class="float-md-start mb-0 fs-4" style="font-family: 'Pushster', cursive;"><i class="fas fa-cross"></i> Christian Wallpapers</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
@@ -106,13 +104,42 @@
     </div>
   </header>
 
-  <main class="px-3">
+  <main>
     {% block content %}
 
     {% endblock %}
   </main>
 
   <footer class="mt-auto text-white-50">
-    <!-- <p>Christian wallpapers</p> -->
+    {% block footer %} {% endblock %}
   </footer>
 </div>
+
+<div class="disable-outside-click">
+  <div class="popup enabled-clicks">
+    <header>
+      <span>Share</span>
+      <div class="close">&times;</i></div>
+    </header>
+    <div class="content">
+      <p>Share this link via</p>
+      <ul class="icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+      </ul>
+      <p>Or copy link</p>
+      <div class="field">
+        <i class="url-icon uil uil-link"></i>
+        <input type="text" readonly value="example.com/share-link">
+        <button>Copy</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="download-div"></div>
+
+</body>
+</html>

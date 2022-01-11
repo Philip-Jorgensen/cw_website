@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title%}Phone Wallpapers{% endblock %}
+{% block content %}
+
+<style>
+    .form-group {
+        width: 60%;
+        margin: auto;
+    }
+
+    .btn:hover {
+        opacity: 0.7;
+    }
+</style>
+
+<form method="POST">
+    <h1 align='center' style="font-family: 'Pushster', cursive;" class="p-3"> Sign up </h1>
+
+    <div class="form-group">
+      <input
+        type="text"
+        id="email"
+        name="email"
+        class="form-control mb-3"
+        placeholder="Enter Email"
+      />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control mb-3"
+        placeholder="Enter Username"
+      />
+      <input
+        type="password"
+        id="password1"
+        name="password1"
+        class="form-control mb-3"
+        placeholder="Enter Password"
+      />
+      <input
+        type="password"
+        id="password2"
+        name="password2"
+        class="form-control mb-3"
+        placeholder="Enter Password Again"
+      />
+      <br />
+      <div align="center">
+        <button class="btn btn-light" type="submit">Sign Up</button>
+      </div>
+    </div>
+  </form>
+{% endblock %}

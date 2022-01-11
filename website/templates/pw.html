@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block title%}Phone Wallpapers{% endblock %}
 {% block content %}
-<h1 align='center' class="p-5" style="font-family: 'Montserrat', sans-serif;">Phone Wallpapers</h1>
+<h1 align='center' class="p-5" style="font-family: 'Pushster', cursive;">Phone Wallpapers</h1>
 
-<div class="container images-container" align='center'>
+<!-- <div class="container images-container" align='center'>
     {% for row in range(row_count) %}
         <div class="row container-fluid p-3">
             {% for col in range(col_count) %}
@@ -17,5 +17,21 @@
             {% endfor %}
         </div>
         {% endfor %}
+</div> -->
+<div class="container images-container" align='center'>
+    {% for row in range(row_count) %}
+        <div class="row container-fluid p-2">
+            {% for col in range(col_count) %}
+            <div class="col">
+                <img 
+                        src="{{ pw_imgs[row + row_count*col] }}"
+                        alt="{{ pw_imgs[row + row_count*col] }}" 
+                        class="img-fluid shadow lg lazyload wall_img"
+                        onclick="lb('{{ pw_imgs_fullres[row + row_count*col] }}')">
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
 </div>
+
 {% endblock %}

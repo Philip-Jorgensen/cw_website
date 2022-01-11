@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title%}Home{% endblock %}
+{% block content %}
+<style>
+.new-wall {
+      background-color:rgb(17, 56, 61);
+      border-radius: 15px;
+}
+.newFile {
+      width: 60%;
+      margin: auto;
+}
+.input-group{
+      width: 60%;
+      margin: auto;
+}
+.btn-submit:hover {
+      opacity: 0.8;
+}
+.input-group span {
+      text-shadow: none;
+}
+.form-check {
+      width: 60%;
+      margin: auto;
+}
+</style>
+
+<h1 style="
+      font-family: 'Pushster', cursive; 
+      text-shadow: 0 .4rem .1rem rgba(0, 0, 0, .5);"
+      class="fs-1 main-title">Admin</h1>
+
+<div class="container p-3">
+      <div class="new-wall mb-3 p-3">
+            <h3 class="mb-3" style="
+            font-family: 'Pushster', cursive; 
+            text-shadow: 0 .4rem .1rem rgba(0, 0, 0, .5);">New wallpaper</h3>
+            <form action="/uploader" method = "POST" enctype = "multipart/form-data">
+                  <label for="newWallpaper" class="form-label">Wallpaper</label>
+                  <input type="file" id="newWallpaper" name="newWallpaper" class="form-control mb-3 newFile">
+                  <div class="input-group mb-3">
+                        <span for="wallTitle" class="input-group-text" id="basic-addon1">Title</span>
+                        <input type="text" class="form-control" id="wallTitle" name="wallTitle">
+                  </div>
+                  <div class="form-check">
+                        <input type="radio" class="form-check-input" value="" id="wallDw" name="wallDw" checked>
+                        <label for="wallDw" class="form-check-label" style="margin-right: auto; margin-left: 0;">Desktop wallpaper</label>
+                  </div>
+                  <div class="form-check">
+                        <input type="radio" class="form-check-input" value="" id="wallPw" name="wallPw">
+                        <label for="wallPw" class="form-check-label" style="margin-right: auto; margin-left: 0;">Phone wallpaper</label>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-light btn-submit">Upload</button>
+            </form>
+      </div>
+</div>
+{% endblock %}
