@@ -23,7 +23,13 @@
 </div> -->
 
 <div class="container images-container" align='center'>
+    <!-- Being able to open a specific image from URL -->
+    <script>Lightbox.activate();</script>
     {% for row in range(row_count) %}
+        <!-- {% if image_param %}
+            <script>lb('{{ dw_imgs_fullres[1] }}')</script>
+        {% endif %} -->
+        
         <div class="row container-fluid p-2">
             {% for col in range(col_count) %}
             <div class="col">

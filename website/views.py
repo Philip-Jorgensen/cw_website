@@ -25,6 +25,7 @@ def dw_page():
     dw_imgs_lowres = []
     dw_imgs_fullres = []
     dw_titles = []
+    image_param = request.args.get('dwImage')
     path = 'static/assets/dw'
     path_lowres = path + '_lowres'
     for filename in os.listdir(f"{working_path}{path}"):
@@ -45,7 +46,8 @@ def dw_page():
         row_count = math.ceil(img_count/col_count), 
         active='dw', 
         col_count = col_count, 
-        dw_imgs_fullres = dw_imgs_fullres)
+        dw_imgs_fullres = dw_imgs_fullres,
+        image_param = image_param)
 
 @views.route("/phone-wallpapers")
 def pw_page():

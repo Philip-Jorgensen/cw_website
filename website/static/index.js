@@ -1,5 +1,10 @@
 function downloadURI(uri) {
+    console.log('test');
 }
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
 var shareState = false;
 
@@ -8,6 +13,78 @@ class Lightbox {
         document.body.insertAdjacentHTML("beforeend", `
             <div class="lightbox" id="lightbox" style="display: none;">
                 <div class="lightbox__inner">
+                    <button type="button" class="lightbox__close lightbox_btn">
+                        &times;
+                    </button>
+                    <button type="button" class="lightbox_btn lightbox_download">
+                    <i class="fas fa-download"></i>
+                    </button>
+                    <button type="button" class="lightbox_btn lightbox_share view-modal">
+                    <i class="fas fa-share-square"></i>
+                    </button>
+                    <div class="lightbox__content"></div>
+                </div>
+            </div>
+        `);
+        
+        const lightBox = document.querySelector("#lightbox");
+        const btnClose = lightBox.querySelector(".lightbox__close");
+        const content = lightBox.querySelector(".lightbox__content");
+        const btnDownload = lightBox.querySelector(".lightbox_download");
+        const shareBtn = lightBox.querySelector(".lightbox_share");
+        const closeLightbox = () => {
+            lightBox.style.display = "none";
+            content.innerHTML = "";
+        };
+
+        lightBox.addEventListener("mousedown", e => {
+            if (e.target.matches("#lightbox")) {
+                closeLightbox();
+            }
+        });
+
+        btnClose.addEventListener("click", () => {
+            closeLightbox();
+            if (shareState){
+                sharePopup();
+                shareState = false;
+            }
+        });
+
+        btnDownload.addEventListener("click", () => {
+            downloadURI(img);
+        });
+
+        shareBtn.addEventListener("click", () => {
+            if (shareState == false){
+                sharePopup();
+                shareState = true;
+            }
+            
+        });
+
+    }
+
+    static show(htmlOrElement) {
+        const content = document.querySelector("#lightbox .lightbox__content");
+        const caption = document.querySelector("#lightbox .lightbox_caption");
+
+        document.querySelector("#lightbox").style.display = null;
+
+        if (typeof htmlOrElement === "string") {
+            content.innerHTML = htmlOrElement;
+        } else {
+            content.innerHTML = "";
+            content.appendChild(htmlOrElement);
+        }
+    }
+}
+
+class Lightbox_pw {
+    static activate() {
+        document.body.insertAdjacentHTML("beforeend", `
+            <div class="lightbox" id="lightbox" style="display: none;">
+                <div class="lightbox__inner_pw">
                     <button type="button" class="lightbox__close lightbox_btn">
                         &times;
                     </button>
@@ -76,8 +153,13 @@ class Lightbox {
 }
 
 function lb(img){
-    Lightbox.activate(img);
+    // Lightbox.activate();
     Lightbox.show(`<img src=${img} class="img-fluid">`);
+}
+
+function lb_pw(img){
+    Lightbox_pw.activate(img);
+    Lightbox_pw.show(`<img src=${img} class="img-fluid">`);
 }
 
 function sharePopup(){
